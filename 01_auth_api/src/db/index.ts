@@ -20,6 +20,6 @@ export const checkDatabaseConnection = async (): Promise<void> => {
     }
 }
 
-export const query = (text: string | QueryConfig<QueryValues[]>, params?: QueryValues[]) => {
-    return pool.query(text, params)
+export const query = <T extends Object>(text: string | QueryConfig<QueryValues[]>, params?: QueryValues[]): Promise<QueryResult<T>> => {
+    return pool.query<T>(text, params);
 }
