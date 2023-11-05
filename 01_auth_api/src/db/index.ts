@@ -1,6 +1,7 @@
 import * as dotenv from 'dotenv';
 import {Pool, QueryConfig, QueryResult} from 'pg'
-import {QueryValues} from "./index.types";
+import {CheckConnectionResult, QueryValues} from "./index.types";
+import {sendError} from "../utils/sendError";
 
 dotenv.config();
 
@@ -12,8 +13,11 @@ pool.on('error', (err: Error) => {
 
 export const checkDatabaseConnection = async (): Promise<void> => {
     try {
-        const result: QueryResult<{time: string}> = await pool.query('SELECT NOW() as time');
+        const result: QueryResult<CheckConnectionResult> = await pool.query('SELECT NOW() as time');
         const currentTime = result.rows[0].time;
+        if (!currentTime) {
+            return sendError('Database connection error');
+        }
         console.log('Database connected successfully. Current time:', currentTime);
     } catch (error) {
         console.error(error);
