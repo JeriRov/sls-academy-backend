@@ -1,9 +1,7 @@
-import * as dotenv from 'dotenv';
+import 'dotenv/config';
 import {Pool, QueryConfig, QueryResult} from 'pg'
 import {CheckConnectionResult, QueryValues} from "./index.types";
 import {sendError} from "../utils/sendError";
-
-dotenv.config();
 
 const pool = new Pool();
 
