@@ -12,10 +12,11 @@ pool.on('error', (err: Error) => {
 
 export const checkDatabaseConnection = async (): Promise<void> => {
     try {
-        const result: QueryResult = await pool.query('SELECT NOW() as currentTime');
-        const currentTime = result.rows[0].currenttime;
+        const result: QueryResult<{time: string}> = await pool.query('SELECT NOW() as time');
+        const currentTime = result.rows[0].time;
         console.log('Database connected successfully. Current time:', currentTime);
     } catch (error) {
+        console.error(error);
         throw error;
     }
 }

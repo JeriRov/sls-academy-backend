@@ -2,7 +2,6 @@ import * as dotenv from 'dotenv';
 import http from 'http';
 import express from 'express';
 import {checkDatabaseConnection} from "./db";
-import {createUser} from "./services/user";
 import routes from "./routes";
 import {notFound} from "./middlewares/notFound";
 import {errorHandler} from "./middlewares/errorHandler/errorHandler";
