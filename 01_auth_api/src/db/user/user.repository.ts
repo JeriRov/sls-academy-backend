@@ -27,3 +27,15 @@ export const findUserByEmail = async (email: string): Promise<User | null> => {
 
     return result.rows[0] || null;
 }
+
+export const findUserById = async (id: string | number): Promise<User | null> => {
+    const query: QueryConfig = {
+        name: 'get-user-by-id',
+        text: 'SELECT * FROM users WHERE id = $1',
+        values: [id],
+    }
+    const result = await db.query<User>(query);
+
+    return result.rows[0] || null;
+}
+

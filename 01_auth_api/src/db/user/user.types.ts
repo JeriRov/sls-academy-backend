@@ -10,3 +10,5 @@ export type AuthTokensWithId = {
     accessToken: string;
     refreshToken: string;
 }
+
+export type AuthTokensId = Pick<AuthTokensWithId, 'id'>;

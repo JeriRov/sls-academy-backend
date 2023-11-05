@@ -21,6 +21,10 @@ export const findUserByEmail = async (email: string): Promise<User | null> => {
     return await userRepository.findUserByEmail(email);
 }
 
+export const findUserById = async (id: string | number): Promise<User | null> => {
+    return await userRepository.findUserById(id);
+}
+
 export const generateTokens = (user: User): AuthTokensWithId => {
     const accessToken = jwt.sign({id: user.id}, JWT_SECRET, {expiresIn: JWT_EXPIRES_IN});
     const refreshToken = jwt.sign({id: user.id}, JWT_SECRET);

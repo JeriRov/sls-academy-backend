@@ -3,7 +3,7 @@ import http from 'http';
 import express from 'express';
 import {checkDatabaseConnection} from "./db";
 import routes from "./routes";
-import {notFound} from "./middlewares/notFound";
+import {notFound} from "./middlewares/notFound/notFound";
 import {errorHandler} from "./middlewares/errorHandler/errorHandler";
 
 dotenv.config();
