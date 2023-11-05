@@ -2,7 +2,7 @@ import {NextFunction, Request, Response} from "express";
 import {createUser, validateEmail, validatePassword} from "../../services/user";
 import {User} from "../../db/user/user.types";
 import {AuthResponse} from "./auth.types";
-import {sendError} from "../../../utils/sendError";
+import {sendError} from "../../utils/sendError";
 
 export const signUp = async (req: Request<{}, AuthResponse, User>, res: Response<AuthResponse>, next: NextFunction) => {
     try {
