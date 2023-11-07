@@ -4,7 +4,7 @@
     "outDir": "dist",
     "module": "NodeNext",
     "baseUrl": "src",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "noImplicitAny": true,
     "strict": true,

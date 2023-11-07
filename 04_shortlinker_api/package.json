@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "nodemon src/index.ts",
-    "test": "node --test --require ts-node/register ./test/detectLocation.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Artem Mahei",
@@ -14,7 +14,11 @@
   "dependencies": {
     "@types/express": "^4.17.20",
     "@types/node": "^20.8.10",
-    "express": "^4.18.2"
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "nanoid": "^5.0.3",
+    "shortid": "^2.2.16"
   },
   "devDependencies": {
     "nodemon": "^3.0.1",
