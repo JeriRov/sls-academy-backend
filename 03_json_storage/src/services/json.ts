@@ -12,7 +12,9 @@ export class JsonData {
     }
 
     storeData(jsonPath: string, data: JsonObject) {
-        if (!jsonPath) throw new Error('jsonPath is required');
+        if (!jsonPath) {
+            throw new Error('jsonPath is required');
+        }
 
         const filePath = path.join(this.dataDirectory, `${jsonPath}.json`);
         fs.writeFileSync(filePath, JSON.stringify(data));
