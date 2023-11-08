@@ -1,0 +1,27 @@
+{
+  "name": "04_shortlinker_api",
+  "version": "1.0.0",
+  "description": "Auth API SLS Academy project.",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Artem Mahei",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.20",
+    "@types/node": "^20.8.10",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0",
+    "nanoid": "^3.3.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

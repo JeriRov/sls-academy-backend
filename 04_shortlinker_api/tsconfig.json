@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "outDir": "dist",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "baseUrl": "src",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ]
+}
