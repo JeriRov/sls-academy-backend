@@ -20,7 +20,7 @@ const testRecords: Record<string, string> = {
     FR: '143.126.159.200'
 };
 
-describe('findCountryById', () => {
+describe('Search for countries by their IPv4', () => {
     for (const countryCode in testRecords) {
         it(`For ${countryCode}`, () => {
             const ip: string = testRecords[countryCode];

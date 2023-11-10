@@ -1,8 +1,10 @@
 import {ipRanges} from "../index";
 
+const IP_OCTET_BASE = 256;
+
 export const ipToNumber = (ip: string): number => {
     const parts = ip.split('.').map(Number);
-    return parts.reduce((acc, part) => acc * 256 + part, 0);
+    return parts.reduce((acc, part) => acc * IP_OCTET_BASE + part, 0);
 }
 
 export const findCountryByIp = (ip: string) => {
